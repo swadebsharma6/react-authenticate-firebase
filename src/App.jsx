@@ -49,21 +49,23 @@ function App() {
   }
 
   return (
-    <section>
-      <h1>Firebase Authentication</h1>
-   { user.uid && <div>
-      <h2>User Name:{user.displayName}</h2>
-      <h4>Email:{user.email}</h4>
-      <img src={user.photoURL} alt="" /> 
-    </div>}
-    {error &&  <h4>{error}</h4>}
-      <div>
-       {user.email ? <button onClick={handleSignOut}>LogOut</button> : <>
-       <button onClick={handleGoogleAuth}>Google</button>
-       <button onClick={handleGithub}>Github</button>
-       </>
-        }
-      </div>
+    <section className=' '>
+       <div className=' bg-gray-300'>
+       <h1>Firebase Authentication</h1>
+       { user.uid && <div>
+          <h2>User Name:{user.displayName}</h2>
+          <h4>Email:{user.email}</h4>
+          <img src={user.photoURL} alt="" /> 
+        </div>}
+        {error &&  <h4>{error}</h4>}
+          <div className='mt-8'>
+           {user.email ? <button onClick={handleSignOut}>LogOut</button> : <>
+           <button onClick={handleGoogleAuth}>Google</button>
+           <button onClick={handleGithub}>Github</button>
+           </>
+            }
+          </div>
+       </div>
     </section>
   )
 }
